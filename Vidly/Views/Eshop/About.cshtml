@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Vidly.Models.Eshop>
+
+@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>About</h2>
+
+<p>
+    @Html.ActionLink("Create New","New")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EshopName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EshopTypeId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EshopName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EshopTypeId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.EshopId }) |
+            @Html.ActionLink("Details", "Details",  new { id=item.EshopId }) |
+            @Html.ActionLink("Delete", "Delete",  new { id=item.EshopId })
+        </td>
+    </tr>
+}
+
+</table>

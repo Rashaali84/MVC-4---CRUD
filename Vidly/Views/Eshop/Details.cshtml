@@ -1,0 +1,43 @@
+﻿@model Vidly.Models.Eshop
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Eshop</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EshopName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EshopName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EshopType.EshopTypeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EshopType.EshopTypeName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EshopId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
